@@ -1,6 +1,7 @@
-import 'package:categoryapp/api_to_local.dart';
+
 import 'package:categoryapp/view/my_home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,15 +15,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme:
           ThemeData(backgroundColor: Colors.white, primaryColor: Colors.white),
-      home: MyHomePage(storage: ApiToLocal()),
+      home: const MyHomePage(),
     );
   }
 }

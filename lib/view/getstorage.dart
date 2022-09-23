@@ -30,7 +30,7 @@ class _HomeAndLivingState extends State<TravelandTech> {
 
   @override
   Widget build(BuildContext context) {
-    return loading == false && newsapi != null
+    return newsapi != null
         ? SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,9 +70,18 @@ class _HomeAndLivingState extends State<TravelandTech> {
           )
         : Container(
             color: Colors.white,
-            height: MediaQuery.of(context).size.height - 90,
-            child: const Center(
-              child: CircularProgressIndicator(),
+            height: MediaQuery.of(context).size.height - 90 -kToolbarHeight,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                CircularProgressIndicator(),
+                SizedBox(
+                  height: 30,
+                ),
+                SizedBox(
+                   width: 200,
+                    child: Text("Get news here after going to news section.", textAlign: TextAlign.center,))
+              ],
             ),
           );
   }

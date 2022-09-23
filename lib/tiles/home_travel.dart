@@ -8,7 +8,7 @@ class HomeTile extends StatefulWidget {
   final VoidCallback onTap;
   const HomeTile({
     Key? key,
-    required this.image,
+     this.image,
     required this.title,
     required this.text,
     required this.onTap,
@@ -19,6 +19,7 @@ class HomeTile extends StatefulWidget {
 }
 
 class _FoodsState extends State<HomeTile> {
+ 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,7 +31,7 @@ class _FoodsState extends State<HomeTile> {
             ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(5)),
               child: CachedNetworkImage(
-                imageUrl: widget.image,
+                imageUrl: widget.image + ".jpg",
                 height: MediaQuery.of(context).size.height * 0.08,
                 width: MediaQuery.of(context).size.width * 0.175,
                 fit: BoxFit.cover,

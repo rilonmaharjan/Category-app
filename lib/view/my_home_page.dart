@@ -6,38 +6,22 @@ import 'package:categoryapp/view/homeand_livings.dart';
 import 'package:categoryapp/view/ramen.dart';
 import 'package:categoryapp/view/getstorage.dart';
 import 'package:flutter/material.dart';
-
 import '../model/newsapi_model.dart';
-import '../services/newsapi_service.dart';
 import 'assets.dart';
 
 class MyHomePage extends StatefulWidget {
   // ignore: prefer_typing_uninitialized_variables
-  final storage;
-  const MyHomePage({Key? key, required this.storage}) : super(key: key);
+  const MyHomePage({Key? key, }) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var titleText = "";
   var option = "Foods";
   int changeColorandSize = 0;
   String? title;
-
   NewsApi? newsapi;
-
-  @override
-  void initState() {
-    NewsApiServices.geturl().then((value) {
-      setState(() {
-        newsapi = value;
-        widget.storage.writeCounter(newsapi);
-      });
-    });
-    super.initState();
-  }
 
   swtichfunction() {
     switch (option) {
